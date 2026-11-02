@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rosella Kitchen, tempat menikmati kelezatan kuliner Nusantara.">
+    <title>Rosella Kitchen | Kuliner Nusantara</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Pengaturan ukuran menu -->
+    <style>
+        .menu-section {
+            padding-left: 7%;
+            padding-right: 7%;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .menu-card {
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .menu-card > img {
+            display: block;
+            width: 100%;
+            height: 225px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 16px;
+        }
+
+        .menu-info h3 {
+            font-size: 20px;
+            margin: 4px 0 6px;
+        }
+
+        .menu-info p {
+            font-size: 15px;
+            line-height: 1.45;
+            margin: 0 0 12px;
+        }
+
+        .menu-bottom strong {
+            font-size: 18px;
+        }
+
+        @media (max-width: 1100px) {
+            .menu-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 800px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .menu-card > img {
+                height: 190px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .menu-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-card > img {
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <span class="flower">✿</span> Rosella Kitchen
+        </a>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+        <button id="themeToggle" class="theme-button">☾</button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="eyebrow">WELCOME TO ROSELLA KITCHEN</p>
+
+        <h1>
+            Kelezatan Nusantara,
+            <span>Sehangat Rumah.</span>
+        </h1>
+
+        <p class="hero-description">
+            Nikmati berbagai hidangan khas Indonesia
+            dengan cita rasa istimewa dan suasana
+            yang penuh kehangatan.
+        </p>
+
+        <a href="#menu" class="primary-button">
+            Jelajahi Menu <span>↗</span>
+        </a>
+
+        <p class="hero-note">✿ Dibuat dengan rasa, disajikan dengan cinta.</p>
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=85"
+            alt="Nasi goreng Indonesia">
+        <div class="image-label">
+            <span>♡</span>
+            <div>
+                <strong>Authentic Taste</strong>
+                <small>From Indonesia</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+    <div class="section-heading">
+        <p class="eyebrow">OUR SPECIAL MENU</p>
+        <h2>Rasa Favorit <span>Nusantara</span></h2>
+        <p>Pilih hidangan favoritmu dan nikmati kelezatannya.</p>
+    </div>
+
+    <div class="menu-controls">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="semua">Semua</button>
+            <button class="filter-btn" data-filter="makanan">Makanan</button>
+            <button class="filter-btn" data-filter="minuman">Minuman</button>
+        </div>
+
+        <input type="search" id="searchInput"
+               placeholder="Cari menu favorit...">
+    </div>
+
+    <div class="menu-grid" id="menuGrid">
+
+        <!-- NASI GORENG -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="nasi goreng spesial">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nasi%20Goreng%20Ayam%20in%20Bali.jpg"
+                 alt="Nasi goreng ayam khas Indonesia" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Nasi Goreng Spesial</h3>
+                <p>Nasi goreng berbumbu khas dengan telur dan pelengkap.</p>
+                <div class="menu-bottom">
+                    <strong>Rp25.000</strong>
+                    <button class="add-cart" data-name="Nasi Goreng Spesial" data-price="25000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- AYAM GEPREK -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="ayam geprek">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ayam%20Geprek.jpg"
+                 alt="Ayam geprek dengan sambal" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Ayam Geprek</h3>
+                <p>Ayam goreng renyah dengan sambal pedas.</p>
+                <div class="menu-bottom">
+                    <strong>Rp22.000</strong>
+                    <button class="add-cart" data-name="Ayam Geprek" data-price="22000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MIE GORENG -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="mie goreng jawa">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bakmie%20Jawa.jpg"
+                 alt="Bakmi Jawa" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Mie Goreng Jawa</h3>
+                <p>Mie dengan bumbu khas Jawa dan sayuran.</p>
+                <div class="menu-bottom">
+                    <strong>Rp20.000</strong>
+                    <button class="add-cart" data-name="Mie Goreng Jawa" data-price="20000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- GADO GADO -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="gado gado">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gado-gado%20asli%20Semarang%2007.jpg"
+                 alt="Gado-gado dengan sayuran dan saus kacang" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Gado-Gado</h3>
+                <p>Sayuran, telur, dan tahu dengan saus kacang.</p>
+                <div class="menu-bottom">
+                    <strong>Rp18.000</strong>
+                    <button class="add-cart" data-name="Gado-Gado" data-price="18000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- MARTABAK -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="martabak manis">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Martabak%20manis%20Indonesia.jpg"
+                 alt="Martabak manis cokelat dan keju" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Martabak Manis</h3>
+                <p>Martabak lembut dengan topping cokelat dan keju.</p>
+                <div class="menu-bottom">
+                    <strong>Rp18.000</strong>
+                    <button class="add-cart" data-name="Martabak Manis" data-price="18000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SATE -->
+        <article class="menu-card"
+            data-category="makanan"
+            data-name="sate ayam">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sate%20ayam%20lontong%20asongan.JPG"
+                 alt="Sate ayam dengan lontong" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MAKANAN</span>
+                <h3>Sate Ayam</h3>
+                <p>Sate ayam dengan bumbu kacang dan lontong.</p>
+                <div class="menu-bottom">
+                    <strong>Rp25.000</strong>
+                    <button class="add-cart" data-name="Sate Ayam" data-price="25000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ES CENDOL -->
+        <article class="menu-card"
+            data-category="minuman"
+            data-name="es cendol">
+
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Es%20Cendol.jpg"
+                 alt="Es cendol tradisional Indonesia" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MINUMAN</span>
+                <h3>Es Cendol</h3>
+                <p>Cendol dengan santan dan gula aren.</p>
+                <div class="menu-bottom">
+                    <strong>Rp12.000</strong>
+                    <button class="add-cart" data-name="Es Cendol" data-price="12000">+</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- ES TEH -->
+        <article class="menu-card"
+            data-category="minuman"
+            data-name="es teh manis">
+
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=85"
+                 alt="Es teh manis" loading="lazy">
+
+            <div class="menu-info">
+                <span class="category">MINUMAN</span>
+                <h3>Es Teh Manis</h3>
+                <p>Teh manis dingin yang segar dan nikmat.</p>
+                <div class="menu-bottom">
+                    <strong>Rp6.000</strong>
+                    <button class="add-cart" data-name="Es Teh Manis" data-price="6000">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+    <p id="emptyMessage" hidden>Menu tidak ditemukan.</p>
+</section>
+
+<!-- KERANJANG -->
+<section class="cart-section" id="cart">
+    <div class="section-heading">
+        <p class="eyebrow">YOUR ORDER</p>
+        <h2>Keranjang <span>Belanja</span> ♡</h2>
+    </div>
+
+    <div class="cart-box">
+        <div id="cartItems">
+            <p class="empty-cart">Belum ada menu yang dipilih.</p>
+        </div>
+
+        <div class="cart-total">
+            <strong>Total Pembayaran</strong>
+            <strong id="totalPrice">Rp0</strong>
+        </div>
+
+        <button id="clearCart" class="secondary-button">
+            Kosongkan Keranjang
+        </button>
+    </div>
+</section>
+
+<!-- DAFTAR HARGA -->
+<section class="price-section">
+    <div class="section-heading">
+        <p class="eyebrow">MENU INFORMATION</p>
+        <h2>Daftar Harga <span>Menu</span></h2>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Menu</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Nasi Goreng Spesial</td><td>Makanan</td><td>Rp25.000</td></tr>
+                <tr><td>2</td><td>Ayam Geprek</td><td>Makanan</td><td>Rp22.000</td></tr>
+                <tr><td>3</td><td>Mie Goreng Jawa</td><td>Makanan</td><td>Rp20.000</td></tr>
+                <tr><td>4</td><td>Gado-Gado</td><td>Makanan</td><td>Rp18.000</td></tr>
+                <tr><td>5</td><td>Martabak Manis</td><td>Makanan</td><td>Rp18.000</td></tr>
+                <tr><td>6</td><td>Sate Ayam</td><td>Makanan</td><td>Rp25.000</td></tr>
+                <tr><td>7</td><td>Es Cendol</td><td>Minuman</td><td>Rp12.000</td></tr>
+                <tr><td>8</td><td>Es Teh Manis</td><td>Minuman</td><td>Rp6.000</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="note">*Harga merupakan contoh untuk keperluan proyek website.</p>
+</section>
+
+<!-- TENTANG -->
+<section class="about-section" id="about">
+    <div class="about-image">
+        <img
+            src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=85"
+            alt="Suasana tempat makan">
+    </div>
+
+    <div class="about-content">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Kenalan dengan <span>Rosella Kitchen</span></h2>
+
+        <p>
+            Rosella Kitchen adalah konsep website kuliner
+            yang memperkenalkan berbagai hidangan khas
+            Indonesia dalam satu tempat.
+        </p>
+
+        <p>
+            Kami ingin menghadirkan pengalaman menjelajahi
+            kekayaan rasa Nusantara melalui tampilan website
+            yang nyaman, menarik, dan mudah digunakan.
+        </p>
+
+        <p class="quote">"Setiap rasa punya cerita, setiap hidangan punya kenangan."</p>
+    </div>
+</section>
+
+<!-- IDENTITAS MAHASISWA -->
+<section class="student-section">
+    <div class="student-card">
+        <p class="eyebrow">WEBSITE PROJECT</p>
+        <h2>Dibuat dengan <span>♡</span></h2>
+        <p>Proyek website menggunakan HTML, CSS, dan JavaScript.</p>
+
+        <div class="student-info">
+            <p><span>Nama</span><strong>: Eci Esterina</strong></p>
+            <p><span>NPM</span><strong>: 251111003</strong></p>
+            <p><span>Program Studi</span><strong>: Sistem Informasi</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section class="contact-section" id="contact">
+    <div class="section-heading">
+        <p class="eyebrow">SAY HELLO</p>
+        <h2>Hubungi <span>Kami</span></h2>
+        <p>Ada pertanyaan atau ingin memberikan saran? Kirim pesanmu.</p>
+    </div>
+
+    <form id="contactForm">
+        <label for="name">Nama</label>
+        <input type="text" id="name" placeholder="Nama kamu">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="nama@email.com">
+
+        <label for="message">Pesan</label>
+        <textarea id="message" rows="4" placeholder="Tulis pesanmu..."></textarea>
+
+        <button type="submit" class="primary-button">Kirim Pesan ↗</button>
+        <p id="formMessage" role="status"></p>
+    </form>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok ↗</a>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>✿ Rosella Kitchen</h2>
+    <p>A Taste of Indonesia, Served with Love.</p>
+    <p>© <span id="year"></span> Rosella Kitchen. All Rights Reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
